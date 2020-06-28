@@ -1,12 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-
-import ThemeButton from '../buttons/ThemeButton';
 
 const Nav = styled.nav`
     display: flex;
     justify-content: space-between;
-    color: white;
 `;
 
 const ViewNav = (props) => {
@@ -14,8 +12,11 @@ const ViewNav = (props) => {
     return (
         <Nav>
             <div>Nav Logo</div>
-            <div>Nav Buttons
-                <ThemeButton />
+            <div>
+                <Link to="/">Home</Link>
+                <Link to="/schedule">Schedule</Link>
+                <Link to="/team">Team</Link>
+                <Link to="/individual">Individual</Link>
             </div>
         </Nav>
     );

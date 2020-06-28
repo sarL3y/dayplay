@@ -3,24 +3,18 @@ import styled from 'styled-components';
 
 import { ThemeContext } from '../../context/ThemeContext';
 
-import ViewNav from './ViewNav';
-
 const Header = styled.header`
     width: 100vw;
-    height: 100px;
-    max-height: 200px;
+    height: 150px;
+    max-height: 150px;
     background-color: ${props => props.theme.menu};
     color: ${props => props.theme.font};
 `;
 
 const HeaderWrapper = (props) => {
     const { theme } = useContext(ThemeContext);
-    
-    return (
-        <Header theme={theme}>
-            <ViewNav />
-        </Header>
-    )
-};
+
+    return <Header theme={theme} />
+}
 
 export default HeaderWrapper;

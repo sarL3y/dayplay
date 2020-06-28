@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 import { ThemeContext } from '../../context/ThemeContext';
 
-import LandingHeader from '../landing/LandingHeader';
-import LandingFooter from '../landing/LandingFooter';
+import LandingHeader from '../headers/LandingHeader';
+import LandingFooter from '../footers/LandingFooter';
 
 const LandingLayout = styled.div`
     width: 100vw;

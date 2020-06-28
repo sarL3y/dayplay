@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import LandingLayout from './LandingLayout';
 import ViewLayout from './ViewLayout';
+import ThemeButton from '../buttons/ThemeButton';
 
 const PageLayoutWrapper = ({ children, isLanding }) => {
     
@@ -10,10 +11,12 @@ const PageLayoutWrapper = ({ children, isLanding }) => {
         isLanding ? (
             <LandingLayout>
                 { children }
+                <ThemeButton />
             </LandingLayout>
         ) : (
             <ViewLayout>
                 { children }
+                <ThemeButton />
             </ViewLayout>
         )
     );

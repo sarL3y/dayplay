@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 import { ThemeContext } from '../../context/ThemeContext';
 
-import ViewHeader from '../view/ViewHeader';
-import ViewFooter from '../view/ViewFooter';
+import ViewHeader from '../headers/ViewHeader';
+import ViewFooter from '../footers/ViewFooter';
 
 const ViewLayout = styled.div`
     width: 100vw;

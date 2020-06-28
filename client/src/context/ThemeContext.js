@@ -23,9 +23,17 @@ const containerColors = {
 };
 
 const buttonColors = {
-    darkGreen: '#28a745',
-    hoverGreen: '#218838'
-
+    dark: {
+        darkGreen: '#28a745',
+        hoverGreen: '#218838',
+        offColor: '#383838'
+    },
+    light: {
+        darkGreen: '#28a745',
+        hoverGreen: '#218838', 
+        offColor: '#dedede'
+    }
+    
 };
 
 const themes = {
@@ -34,16 +42,18 @@ const themes = {
         surface: containerColors.dark.surface,
         menu: containerColors.dark.menu,
         font: fontColors.light.light,
-        button: buttonColors.darkGreen,
-        hoverButton: buttonColors.hoverGreen
+        button: buttonColors.dark.darkGreen,
+        hoverButton: buttonColors.dark.hoverGreen,
+        offColor: buttonColors.dark.offColor
     },
     light: {
         background: containerColors.light.background,
         surface: containerColors.light.surface,
         menu: containerColors.light.menu,
         font: fontColors.dark.dark,
-        button: buttonColors.darkGreen,
-        hoverButton: buttonColors.hoverGreen
+        button: buttonColors.light.darkGreen,
+        hoverButton: buttonColors.light.hoverGreen,
+        offColor: buttonColors.light.offColor
     }
 };
 

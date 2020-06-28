@@ -1,22 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import Container from '../components/containers/Container';
 import CenteredRow from '../components/containers/CenteredRow';
 import ColumnContainer from '../components/containers/ColumnContainer';
 import Calendar from '../components/calendar/Calendar';
 
-import { teamMembers } from '../data/data';
+import { workingSchedule } from '../data/data';
 
-const Individual = ({ children }) => {
-    const [member, setMember] = useState(teamMembers[1]);
+const Schedule = ({ children }) => {
 
     return (
         <Container>
             <ColumnContainer>
                 <CenteredRow>
                     <ColumnContainer>
-                    <h2>Individual View</h2>
-                    <Calendar member={member} />
+                    <h2>Schedule View</h2>
+                    <Calendar schedule={workingSchedule} />
                     </ColumnContainer>
                 </CenteredRow>
             </ColumnContainer>
@@ -24,4 +23,4 @@ const Individual = ({ children }) => {
     );
 }
 
-export default Individual;
+export default Schedule;
