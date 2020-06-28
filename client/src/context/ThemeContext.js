@@ -12,6 +12,7 @@ const fontColors = {
 const containerColors = {
     dark: {
         background: '#121212',
+        backgroundGradient: 'linear-gradient(235deg, rgba(30,30,30,0.75) 0%, rgba(18,18,18,1) 100%);',
         menu: '#2D2D2D',
         surface: '#252525'
     },
@@ -26,12 +27,14 @@ const buttonColors = {
     dark: {
         darkGreen: '#28a745',
         hoverGreen: '#218838',
-        offColor: '#383838'
+        offColor: '#383838',
+        hoverOffColor: '#5e5e5e'
     },
     light: {
         darkGreen: '#28a745',
         hoverGreen: '#218838', 
-        offColor: '#dedede'
+        offColor: '#dedede',
+        hoverOffColor: '#cfcfcf'
     }
     
 };
@@ -42,18 +45,23 @@ const themes = {
         surface: containerColors.dark.surface,
         menu: containerColors.dark.menu,
         font: fontColors.light.light,
+        flipFont: fontColors.dark.dark,
         button: buttonColors.dark.darkGreen,
         hoverButton: buttonColors.dark.hoverGreen,
-        offColor: buttonColors.dark.offColor
+        offColor: buttonColors.dark.offColor,
+        hoverOffColor: buttonColors.dark.hoverOffColor,
+        backgroundGradient: containerColors.dark.backgroundGradient
     },
     light: {
         background: containerColors.light.background,
         surface: containerColors.light.surface,
         menu: containerColors.light.menu,
         font: fontColors.dark.dark,
+        flipFont: fontColors.light.light,
         button: buttonColors.light.darkGreen,
         hoverButton: buttonColors.light.hoverGreen,
-        offColor: buttonColors.light.offColor
+        offColor: buttonColors.light.offColor,
+        hoverOffColor: buttonColors.light.hoverOffColor
     }
 };
 

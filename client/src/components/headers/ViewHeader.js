@@ -7,8 +7,6 @@ import ViewNav from '../nav/ViewNav';
 
 const Header = styled.header`
     width: 100vw;
-    height: 100px;
-    max-height: 200px;
     background-color: ${props => props.theme.menu};
     color: ${props => props.theme.font};
 `;

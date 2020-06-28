@@ -17,6 +17,13 @@ code {
     monospace;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+  border: none;
+  outline: none;
+}
+
 button {
   background: none;
 	border: none;
@@ -24,4 +31,31 @@ button {
   font: inherit;
   cursor: pointer;
 	outline: inherit;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  margin: 0.5rem;
+}
+
+h1 {
+  font-size: 2.25rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+ul {
+  list-style: none;
+}
+
+p {
+  font-size: 1.25rem;
+  margin: 0.5rem;
+  padding: 0;
 }

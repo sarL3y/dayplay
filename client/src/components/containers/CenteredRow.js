@@ -8,6 +8,7 @@ const CenteredRow = styled.div`
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    margin: 0.5rem 0px;
 `;
 
 const Wrapper = ({ children }) => {

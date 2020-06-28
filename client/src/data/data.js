@@ -108,10 +108,82 @@ const teamMembers = [
         ]
     },
     {
-        name: 'Annie Nguyen',
+        name: 'Ahnie Nguyen',
         position: 'Production Assistant',
         phone: '(310) 266-9159',
         email: 'annie.nguyen@email.com',
+        days: [
+            {
+                day: 'SUN',
+                available: true
+            }, 
+            {
+                day: 'MON',
+                available: false
+            },
+            {
+                day: 'TUE',
+                available: true
+            },
+            {
+                day: 'WED',
+                available: false
+            },
+            {
+                day: 'THU',
+                available: true
+            },
+            {
+                day: 'FRI',
+                available: true
+            },
+            {
+                day: 'SAT',
+                available: false
+            }
+        ]
+    },
+    {
+        name: 'Michael Schultz',
+        position: 'Production Assistant',
+        phone: '(310) 266-9159',
+        email: 'michael.schultz@email.com',
+        days: [
+            {
+                day: 'SUN',
+                available: true
+            }, 
+            {
+                day: 'MON',
+                available: false
+            },
+            {
+                day: 'TUE',
+                available: true
+            },
+            {
+                day: 'WED',
+                available: false
+            },
+            {
+                day: 'THU',
+                available: true
+            },
+            {
+                day: 'FRI',
+                available: true
+            },
+            {
+                day: 'SAT',
+                available: false
+            }
+        ]
+    },
+    {
+        name: 'Ricardo Santos',
+        position: 'Production Assistant',
+        phone: '(310) 266-9159',
+        email: 'ricardo.santos@email.com',
         days: [
             {
                 day: 'SUN',

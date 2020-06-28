@@ -7,16 +7,19 @@ import LandingViewSelectButton from '../components/buttons/LandingViewSelect';
 
 const views = [
     {
-        title: 'Schedule',
-        link: '/schedule'
+        title: 'SCHEDULE',
+        link: '/schedule',
+        icon: 'edit'
     }, 
     {
-        title: 'Team',
+        title: 'TEAM',
         link: '/team', 
+        icon: 'group'
     },
     {
-        title: 'Individual',
-        link: '/individual'
+        title: 'INDIVIDUAL',
+        link: '/individual',
+        icon: 'user'
     }
 ];
 
@@ -26,7 +29,7 @@ const Landing = (props) => {
         <Container>
             <ColumnContainer>
                 <CenteredRow>
-                    <h2>Select a View</h2>
+                    <h2>Dashboard</h2>
                 </CenteredRow>
                 <CenteredRow>
                 {views.map((view, key) => (
@@ -34,7 +37,11 @@ const Landing = (props) => {
                 ))}
                 </CenteredRow>
                 <CenteredRow>
-                    
+                    <ColumnContainer>
+                        <p>1. Set the available working days</p>
+                        <p>2. View your team's availability</p>
+                        <p>3. Auto-generate a list of dayplayers who can work</p>
+                    </ColumnContainer>
                 </CenteredRow>
             </ColumnContainer>
         </Container>
