@@ -13,6 +13,7 @@ Team scheduler for high-variability workforces.
 - Theme select (dark mode) with React Context
 
 ## Next Steps
+- Testing
 - Responsive Design
 - Multiple dayplayer weeks in db
 - Decouple data fetching from components
