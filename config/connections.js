@@ -1,9 +1,10 @@
 import mongoose from 'mongoose';
+import { MONGODB_URI } from './database';
 
 // Mongo
 mongoose.Promise = global.Promise;
 
-mongoose.connect('', {
+mongoose.connect(MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
