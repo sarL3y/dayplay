@@ -14,6 +14,6 @@ Team scheduler for high-variability workforces.
 - Fork it
 - From root: `npm install`
 - `cd client/` and `npm install` again
-- Wire up your MongoDB and add connection string to env
+- Create MongoDB cluster and add connection string to `MONGODB_URI=` env variable
 - From root: `npm start`
 - `cd client/` and `npm start` again (or run concurrently)
