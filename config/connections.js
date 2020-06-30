@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 // Mongo
 mongoose.Promise = global.Promise;
 
-mongoose.connect('mongodb+srv://dayplay_admin:Aq%23eua6GFBEf8jn@cluster0-x5f7u.mongodb.net/live?retryWrites=true&w=majority', {
+mongoose.connect('', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
