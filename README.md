@@ -15,3 +15,5 @@ Team scheduler for high-variability workforces.
 - From root: `npm install`
 - `cd client/` and `npm install` again
 - Wire up your MongoDB and add connection string to env
+- From root: `npm start`
+- `cd client/` and `npm start` again (or run concurrently)
