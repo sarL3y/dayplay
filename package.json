@@ -1,0 +1,31 @@
+{
+  "name": "dayplay-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js --exec babel-node -e js"
+  },
+  "author": "sarL3y",
+  "license": "ISC",
+  "dependencies": {
+    "casual": "^1.6.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-graphql": "^0.9.0",
+    "graphql": "^15.1.0",
+    "graphql-tools": "^6.0.10",
+    "lodash": "^4.17.15",
+    "mongoose": "^5.9.20",
+    "nodemon": "^2.0.4",
+    "sequelize": "^6.1.0",
+    "sqlite3": "^4.2.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "morgan": "^1.10.0"
+  }
+}

@@ -8,29 +8,46 @@ import SurfaceContainer from '../components/containers/SurfaceContainer';
 import GenerateList from '../components/buttons/GenerateList';
 import Line from '../components/Line';
 
-import { workingSchedule } from '../data/data';
+import useFetchGraphQL from '../hooks/useFetchGraphQL';
 
 const Schedule = ({ children }) => {
-
+    const { response, error, isLoading } = useFetchGraphQL(`
+        query {
+            getAllSchedules {
+                id
+                week
+                days {
+                    day
+                    available
+                }
+            }
+        }`);
+    
     return (
-        <Container>
-            <ColumnContainer>
-                <CenteredRow>
-                    <ColumnContainer>
-                    <h2>Schedule View</h2>
-                    <Line />
-                    <p>Set the working days:</p>
-                    <SurfaceContainer>
-                        <Calendar schedule={workingSchedule} />
-                    </SurfaceContainer>
+        !isLoading && response?.data?.getAllSchedules ? (
+            <Container>
+                <ColumnContainer>
                     <CenteredRow>
-                        <GenerateList>Generate Working List</GenerateList>
+                        <ColumnContainer>
+                        <h2>Schedule View</h2>
+                        <Line />
+                        <p>Set the working days:</p>
+                        <SurfaceContainer>
+                            {response.data.getAllSchedules.map((schedule, key) => (
+                                <Calendar schedule={schedule} key={key} />
+                            ))}
+                        </SurfaceContainer>
+                        <CenteredRow>
+                            <GenerateList>Generate Working List</GenerateList>
+                        </CenteredRow>
+                        </ColumnContainer>
                     </CenteredRow>
-                    </ColumnContainer>
-                </CenteredRow>
-            </ColumnContainer>
-        </Container>    
+                </ColumnContainer>
+            </Container>    
+        ) : (
+            null
+        )
     );
-}
+};
 
 export default Schedule;

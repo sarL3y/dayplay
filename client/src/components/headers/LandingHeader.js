@@ -4,8 +4,6 @@ import styled from 'styled-components';
 
 import { ThemeContext } from '../../context/ThemeContext';
 
-import CenteredRow from '../containers/CenteredRow';
-
 const Header = styled.header`
     display: flex;
     justify-content: center;

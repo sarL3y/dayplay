@@ -6,6 +6,7 @@ import { ThemeContext } from '../../context/ThemeContext';
 const Container = styled.div`
     width: 100%;
     padding: 1.25rem;
+    margin-bottom: 2vh;
     background-color: ${props => props.theme.surface};
     color: ${props => props.theme.font};
     border: 1px solid rgba(0,0,0,0.125);

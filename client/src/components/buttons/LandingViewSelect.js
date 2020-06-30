@@ -25,7 +25,7 @@ const LandingLink = styled(Link)`
     padding: 0.5rem;
     margin: 0.5rem;
     font-weight: bold;
-    ${props => props.isDark ? `background: ${props.theme.backgroundGradient};` : `background-color: ${props.theme.surface}`};
+    ${props => props.isdark ? `background: ${props.theme.backgroundGradient};` : `background-color: ${props.theme.surface}`};
     color: ${props => props.theme.font};
     border: 2px solid ${props => props.theme.menu};
     border-radius: 0.5rem;
@@ -41,13 +41,12 @@ const LandingLink = styled(Link)`
 `;
 
 const LandingViewSelect = ({ children, view }) => {
-    const { theme, isDark } = useContext(ThemeContext);
+    const { theme } = useContext(ThemeContext);
 
     return (
         <LandingLink
             to={view.link}
             theme={theme} 
-            isDark={isDark} 
         >
                 {view.icon === 'edit' && <Icon theme={theme}><EditIcon /></Icon>}
                 {view.icon === 'group' && <Icon theme={theme}><GroupIcon /></Icon>}

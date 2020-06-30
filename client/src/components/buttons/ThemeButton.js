@@ -7,7 +7,7 @@ import { ReactComponent as SunIcon } from '../../svg/Sun_Icon.svg';
 const Button = styled.button`
     position: absolute;
     right: 0px;
-    bottom: 5rem;
+    bottom: calc(5rem + 1%);
     z-index: 10000;
     display: flex;
     align-items: center;

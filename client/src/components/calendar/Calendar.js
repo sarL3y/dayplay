@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { ThemeContext } from '../../context/ThemeContext';
 
-import SurfaceContainer from '../containers/SurfaceContainer';
+import useFetchGraphQL from '../../hooks/useFetchGraphQL';
 
 const Calendar = styled.div`
     display: flex;
@@ -40,7 +40,7 @@ const MemberLabelContainer = styled.div`
     justify-content: flex-start;
     align-items: center;
     left: -25%;
-    top: 15%;
+    top: 16%;
     z-index: 0;
     width: 200px;
     background-color: ${props => props.theme.menu};
@@ -57,23 +57,79 @@ const MemberLabel = styled.div`
 
 const CalendarWrapper = ({ children, member, schedule }) => {
     const { theme } = useContext(ThemeContext);
-    console.log(member);
-    const [days, setDays] = useState(member ? member.days : schedule ? schedule : null);
+    const [days, setDays] = useState(member ? member.days : schedule ? schedule.days : null);
 
-    const clickHandler = (e, day, key) => {
+    const teamClickHandler = (e, day, key, id) => {
         e.preventDefault();
-        console.log('Clicked: ', day);
-
         const dayToChange = day;
-        console.log('DayToChange: ', dayToChange);
         dayToChange.available = !dayToChange.available;
 
-        setDays(prevDays => (
-            prevDays.map(obj => {
-                if (obj === dayToChange) return {...obj, dayToChange }
-                return obj;
+        const stringId = JSON.stringify(id);
+        const stringDay = JSON.stringify(dayToChange.day);
+        
+        fetch('/api', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              query: `mutation {
+                        updateTeamMember(input: {id: ${stringId}}, day: {day: ${stringDay}}) {
+                            firstName
+                            days {
+                                day
+                                available
+                            }
+                        }
+                    }`})
+        })
+            .then(res => {
+                setDays(prevDays => (
+                    prevDays.map(day => {
+                        if (day === dayToChange) return {...day, dayToChange }
+                        return day;
+                    })
+                ));
             })
-        ));
+            .catch(err => {
+                console.log(err);
+            });
+    };
+
+    const scheduleClickHandler = (e, day, key, id) => {
+        e.preventDefault();
+        const dayToChange = day;
+        dayToChange.available = !dayToChange.available;
+
+        const stringId = JSON.stringify(id);
+        const stringDay = JSON.stringify(dayToChange.day);
+        
+        fetch('/api', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              query: `mutation {
+                        updateSchedule(input: {id: ${stringId}}, day: {day: ${stringDay}}) {
+                            days {
+                                day
+                                available
+                            }
+                        }
+                    }`})
+        })
+            .then(res => {
+                setDays(prevDays => (
+                    prevDays.map(day => {
+                        if (day === dayToChange) return {...day, dayToChange }
+                        return day;
+                    })
+                ));
+            })
+            .catch(err => {
+                console.log(err);
+            });
     };
 
     return (
@@ -81,14 +137,15 @@ const CalendarWrapper = ({ children, member, schedule }) => {
             {member && 
                 <MemberLabelContainer theme={theme}>
                     <MemberLabel>
-                        <span>{member.name}</span>
+                        <span>{member.firstName} {member.lastName}</span>
                         <span>{member.position}</span>
                     </MemberLabel>
                 </MemberLabelContainer>
             }
+
             {member &&
                 member.days.map((day, key) => (
-                    <Day onClick={e => clickHandler(e, day, key)} 
+                    <Day onClick={e => teamClickHandler(e, day, key, member.id)} 
                         available={day.available} 
                         theme={theme} 
                         key={key}
@@ -96,11 +153,20 @@ const CalendarWrapper = ({ children, member, schedule }) => {
                         {day.day}
                     </Day>
                 ))
+            }
+
+            {schedule && 
+                <MemberLabelContainer theme={theme}>
+                    <MemberLabel>
+                        <span>Week of:</span>
+                        <span>{schedule.week}</span>
+                    </MemberLabel>
+                </MemberLabelContainer>
             }   
             
             {schedule &&
-                schedule.map((day, key) => (
-                    <Day onClick={e => clickHandler(e, day, key)} 
+                schedule.days.map((day, key) => (
+                    <Day onClick={e => scheduleClickHandler(e, day, key, schedule.id)} 
                         available={day.available} 
                         theme={theme} 
                         key={key}
