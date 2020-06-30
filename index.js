@@ -5,7 +5,6 @@ import cors from 'cors';
 import schema from './data/schema';
 import { PORT } from './config/database';
 
-const port = PORT || 8080;
 const path = require("path");
 const app = express();
 
@@ -30,4 +29,4 @@ app.get("*", (req, res) => {
     res.sendFile(index);
   });
 
-app.listen(port, () => console.log(`Running at localhost:${port}`));
+app.listen(process.env.PORT || 8080, () => console.log(`Up and running!`));
