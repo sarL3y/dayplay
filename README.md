@@ -2,7 +2,7 @@
 Team scheduler for high-variability workforces.
 <!-- Check it out live: [DayPlay](https://github.com/facebook/create-react-app). -->
 
-<a href="https://imgur.com/e0IyzEs"><img src="https://i.imgur.com/e0IyzEs.png" title="source: imgur.com" /></a>
+<!-- <a href="https://imgur.com/e0IyzEs"><img src="https://i.imgur.com/e0IyzEs.png" title="source: imgur.com" /></a> -->
 
 ## Next Steps
 - Responsive Design
