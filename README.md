@@ -4,8 +4,7 @@ Team scheduler for high-variability workforces.
 
 <img src="https://raw.githubusercontent.com/sarL3y/dayplay/master/client/public/dashboard-screenshot.png" alt="dashboard view" width="500"/>
 
-<img src="https://raw.githubusercontent.com/sarL3y/dayplay/master/client/public/teamview-screenshot.png" alt="team view" width="500"/>
-
+<img src="https://raw.githubusercontent.com/sarL3y/dayplay/master/client/public/teamview_screenshot.png" alt="team view" width="500"/>
 
 ## Next Steps
 - Responsive Design
